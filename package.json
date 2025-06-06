@@ -1,0 +1,19 @@
+{
+  "name": "final_project_qa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:youtube": "npx cypress run --browser chrome --headed --spec \"cypress/e2e/youtube.cy.js\"",
+    "test:amazon": "npx cypress run --browser chrome --headed --spec \"cypress/e2e/amazon.cy.js\"",
+    "test:agoda": "npx cypress run --browser chrome --headed --spec \"cypress/e2e/agoda.cy.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^14.4.0",
+    "cypress-xpath": "^2.0.1"
+  }
+}

@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
-// require("dotenv").config();
 
 module.exports = defineConfig({
+	viewportWidth: 1920,
+	viewportHeight: 1080,
 	e2e: {
 		env: {
 			SEARCH_QUERY: "chair",
@@ -10,11 +11,17 @@ module.exports = defineConfig({
 			AGODA_URL: "https://www.agoda.com/",
 		},
 		setupNodeEvents(on, config) {
+			require("cypress-mochawesome-reporter/plugin")(on);
 		},
 		specPattern: "cypress/e2e/*.cy.js",
-		video: true,
 		supportFile: "cypress/support/e2e.js",
+		video: true,
 	},
-	viewportWidth: 1920,
-	viewportHeight: 1080,
+	reporter: "cypress-mochawesome-reporter",
+	reporterOptions: {
+		reportDir: "cypress/reports",
+		overwrite: false,
+		html: true,
+		json: false,
+	},
 });
